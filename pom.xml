@@ -15,12 +15,12 @@
 
     <groupId>com.suslov</groupId>
     <artifactId>my-internet-shop</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>shop-ui</module>
-        <module>shop-admin-ui</module>
         <module>shop-database</module>
+        <module>shop-admin-ui</module>
+        <module>shop-ui</module>
     </modules>
 </project>
