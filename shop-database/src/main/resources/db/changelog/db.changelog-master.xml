@@ -10,8 +10,15 @@
         <runningAs username="root"/>
     </preConditions>
 
+    <changeSet author="yaroslav.suslov" id="0">
+        <tagDatabase tag="db_init"/>
+    </changeSet>
 
+    <include file="gen_changesets/db.changelog-20191130-185527246.xml" relativeToChangelogFile="true"/>
 
+    <changeSet author="yaroslav.suslov" id="1">
+        <tagDatabase tag="v.1.0"/>
+    </changeSet>
 
 <!--    <changeSet author="aleks_ush" id="0">-->
 <!--        <tagDatabase tag="db_init"/>-->
