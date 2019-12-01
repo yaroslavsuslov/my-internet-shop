@@ -22,7 +22,7 @@ public class UserAuthService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        //        for (GrantedAuthority authority : userDetails.getAuthorities()) {
+//        for (GrantedAuthority authority : userDetails.getAuthorities()) {
 //            System.out.println("User detailes: " + authority.getAuthority());
 //        }
         return userRepository.getUserByUsername(username)

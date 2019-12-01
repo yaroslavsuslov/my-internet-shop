@@ -20,6 +20,12 @@
         <tagDatabase tag="v.1.0"/>
     </changeSet>
 
+    <include file="gen_changesets/db.changelog-20191201-181847238.xml" relativeToChangelogFile="true"/>
+
+    <changeSet author="yaroslav.suslov" id="2">
+        <tagDatabase tag="v.2.0"/>
+    </changeSet>
+
 <!--    <changeSet author="aleks_ush" id="0">-->
 <!--        <tagDatabase tag="db_init"/>-->
 <!--    </changeSet>-->
