@@ -1,11 +1,13 @@
 package com.suslov.service.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.suslov.controllers.repr.ProductRepr;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class LineItem {
+public class LineItem implements Serializable {
 
     private Long productId;
 
@@ -67,6 +69,7 @@ public class LineItem {
         this.material = material;
     }
 
+    @JsonIgnore
     public BigDecimal getTotal() {
         return productRepr.getPrice().multiply(new BigDecimal(qty));
     }

@@ -1,6 +1,7 @@
 package com.suslov.controllers;
 
 import com.suslov.service.CartService;
+import com.suslov.service.ProductService;
 import com.suslov.service.model.LineItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +14,12 @@ public class CartController {
 
     private final CartService cartService;
 
+    private final ProductService productService;
+
     @Autowired
-    public CartController(CartService cartService) {
+    public CartController(CartService cartService, ProductService productService) {
         this.cartService = cartService;
+        this.productService = productService;
     }
 
     @RequestMapping("/cart")
@@ -27,6 +31,8 @@ public class CartController {
 
     @RequestMapping(value = "/cart", method = RequestMethod.POST)
     public String updateCart(LineItem lineItem) {
+        lineItem.setProductRepr(productService.findById(lineItem.getProductId())
+                .orElseThrow(IllegalArgumentException::new));
         cartService.updateCart(lineItem);
         return "redirect:/cart";
     }
