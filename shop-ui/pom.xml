@@ -12,9 +12,7 @@
     <name>shop-ui</name>
     <description>UI module</description>
 
-    <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
-    </properties>
+
 
     <dependencies>
         <dependency>

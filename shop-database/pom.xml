@@ -15,7 +15,6 @@
     <properties>
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>
-        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
     <dependencies>
