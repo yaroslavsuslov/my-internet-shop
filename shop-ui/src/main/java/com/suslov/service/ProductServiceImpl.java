@@ -4,6 +4,8 @@ import com.suslov.controllers.repr.ProductRepr;
 import com.suslov.persist.model.Product;
 import com.suslov.persist.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
