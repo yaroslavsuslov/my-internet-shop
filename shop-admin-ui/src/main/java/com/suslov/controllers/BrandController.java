@@ -60,6 +60,7 @@ public class BrandController {
 
         try {
             brandRepository.save(brand);
+            logger.info(brand.getName() + " is created and saved (new brand)");
         } catch (Exception ex) {
             logger.error("Problem with creating or updating brand", ex);
             redirectAttributes.addFlashAttribute("error", true);
