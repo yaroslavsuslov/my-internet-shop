@@ -1,4 +1,4 @@
-package test.java.ru.geekmarket.steps;
+package ru.geekmarket.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
@@ -11,14 +11,14 @@ import ru.geekmarket.DriverInitializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LoginSteps {
+public class LoginSteps extends AbstractSteps{
 
     private WebDriver webDriver = null;
 
-    @Given("^I open firefox browser$")
-    public void iOpenFirefoxBrowser() throws Throwable {
-        webDriver = DriverInitializer.getDriver();
-    }
+//    @Given("^I open browser$")
+//    public void iOpenFirefoxBrowser() throws Throwable {
+//        webDriver = DriverInitializer.getDriver();
+//    }
 
     @When("^I navigate to login\\.html page$")
     public void iNavigateToLoginHtmlPage() throws Throwable {
@@ -68,8 +68,8 @@ public class LoginSteps {
         webDriver.findElement(By.id("inp-password"));
     }
 
-    @After
-    public void quitBrowser() {
-        webDriver.quit();
-    }
+//    @After
+//    public void quitBrowser() {
+//        webDriver.quit();
+//    }
 }

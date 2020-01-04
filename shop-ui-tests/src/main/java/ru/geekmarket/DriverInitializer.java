@@ -1,10 +1,11 @@
-package main.java.ru.geekmarket;
+package ru.geekmarket;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Objects;
 import java.util.Properties;
 
 public class DriverInitializer {
@@ -21,7 +22,7 @@ public class DriverInitializer {
     }
 
     public static WebDriver getDriver() {
-        switch (getProperty("browser")) {
+        switch (Objects.requireNonNull(getProperty("browser"))) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();

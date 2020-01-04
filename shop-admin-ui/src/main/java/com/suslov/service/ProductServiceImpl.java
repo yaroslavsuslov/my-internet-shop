@@ -75,4 +75,10 @@ public class ProductServiceImpl implements ProductService, Serializable {
         }
         productRepository.save(product);
     }
+
+    @Override
+    @Transactional
+    public ProductRepr findByName(String name) {
+        return new ProductRepr(productRepository.findByName(name).get());
+    }
 }
