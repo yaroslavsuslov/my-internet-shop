@@ -1,6 +1,7 @@
 package com.suslov.controllers;
 
 import com.suslov.controllers.repr.ProductRepr;
+import com.suslov.persist.model.Product;
 import com.suslov.persist.repo.BrandRepository;
 import com.suslov.persist.repo.CategoryRepository;
 import com.suslov.service.ProductService;
@@ -40,6 +41,16 @@ public class ProductsController {
         model.addAttribute("activePage", "Products");
         model.addAttribute("products", productService.findAll());
         return "products";
+    }
+
+    @GetMapping("/product/{name}/find")
+    public String findProductByName(Model model, @PathVariable("name") String name) {
+        model.addAttribute("edit", true);
+        model.addAttribute("activePage", "Products");
+        model.addAttribute("product", productService.findByName(name));
+        model.addAttribute("categories", categoryRepository.findAll());
+        model.addAttribute("brands", brandRepository.findAll());
+        return "product_form";
     }
 
     @GetMapping("/product/{id}/edit")

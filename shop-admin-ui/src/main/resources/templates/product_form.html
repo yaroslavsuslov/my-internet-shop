@@ -53,12 +53,12 @@
                     <div class="form-group">
                         <label for="newPictures">Product image</label>
                         <input th:field="*{newPictures}" type="file" class="form-control" id="newPictures"
-                               placeholder="Upload new product picture" multiple required>
+                               placeholder="Upload new product picture" multiple>
                     </div>
                 </div>
 
                 <div class="card-footer bg-white">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button id="btn-submit-product" type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
